@@ -85,7 +85,7 @@ write_sdc ${outputDir}/${topModule}_dc.sdc
 proc syn_done {topModule} {
   echo mem max usage : [mem] , cpu : [cpu_time]
   echo $topModule syn finished
-  sh rm -rf clog* filenames.log
+  sh rm -rf clog* filenames*.log
 }
 
 update_timing
