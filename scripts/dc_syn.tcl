@@ -1,10 +1,20 @@
 sh date
 set initial_time [sh date +%s]
-set_host_options -max_cores 12
 
-set topModule ChipTop
-set reportDir ./rpt
-set outputDir ./output
+source ./scripts/common.tcl
+
+set reportDir build/${topModule}/reports
+set outputDir build/${topModule}/outputs
+set logDir    build/${topModule}/logs
+
+set dirs []
+set dirs [list ${reportDir} ${outputDir} ${logDir}]
+
+foreach dir $dirs {
+  if { [file exists ${dir}] == 0 } {
+    file mkdir ${dir}
+  }
+}
 
 set_svf ${outputDir}/${topModule}_dc.svf
 
@@ -30,8 +40,10 @@ set_clock_gating_style  -minimum_bitwidth 4 -sequential_cell latch \
          -positive_edge_logic integrated \
          -max_fanout 12
 
-analyze -format sverilog -vcs "-f ./dut/flist.f" > ./log/analyze.log
-elaborate ${topModule} > ./log/elaborate.log
+analyze -format sverilog -vcs "-f ${flistPath}" > ${logDir}/analyze.log
+elaborate ${topModule} > ${logDir}/elaborate.log
+
+kill
 
 link > ${reportDir}/link.rpt
 if {[link] == 0} {
@@ -84,4 +96,4 @@ source -e -v ./scripts/report.tcl
 set_svf -off
 sh date
 syn_done ${topModule} 
-exit
+# exit

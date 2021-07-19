@@ -38,12 +38,3 @@ while {[gets $ipDBList line] >= 1} {
 set_app_var search_path  [list $search_path]
 set_app_var target_library $targetLib
 set_app_var link_library "* $target_library $synthetic_library $mem_library $ip_library"
-
-set DESIGN_NAME "ChipTop";
-set RTL_SOURCE_FILES_VERILOG "/home/guangda.dong/work/project/tmp/chipyard/vlsi/generated-src/chipyard.TestHarness.LargeBoomConfig/chipyard.TestHarness.LargeBoomConfig.top.v
-/home/guangda.dong/work/project/tmp/chipyard/vlsi/generated-src/chipyard.TestHarness.LargeBoomConfig/chipyard.TestHarness.LargeBoomConfig.top.mems.v
-/home/guangda.dong/work/project/tmp/chipyard/vlsi/generated-src/chipyard.TestHarness.LargeBoomConfig/EICG_wrapper.v
-/home/guangda.dong/work/project/tmp/chipyard/vlsi/example.v
-/home/guangda.dong/work/project/tmp/chipyard/vlsi/generated-src/chipyard.TestHarness.LargeBoomConfig/plusarg_reader.v
-/home/guangda.dong/work/project/tmp/chipyard/vlsi/generated-src/chipyard.TestHarness.LargeBoomConfig/IOCell.v
-/home/guangda.dong/work/project/tmp/chipyard/vlsi/generated-src/chipyard.TestHarness.LargeBoomConfig/ClockDividerN.sv";

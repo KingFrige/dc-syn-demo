@@ -1,0 +1,5 @@
+filenames*
+build/
+command.log
+.template/
+alib-52/
