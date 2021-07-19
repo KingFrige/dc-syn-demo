@@ -7,8 +7,8 @@ set MAX_TRANS   0.3
 set MAX_CAP     0.2
 set OUTPUT_LOAD 0.1
 
-# freqMHz = 100
-set CLK_PERIOD      (1000/100)
+# freqMHz = 1000
+set CLK_PERIOD      [expr 1000.0/1000.0]
 set CLK_HALF        [expr 0.50 * $CLK_PERIOD]
 set CLK_ONETHIRD    [expr 0.33 * $CLK_PERIOD]
 set CLK_TWOTHIRD    [expr 0.67 * $CLK_PERIOD]
