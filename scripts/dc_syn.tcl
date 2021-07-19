@@ -43,8 +43,6 @@ set_clock_gating_style  -minimum_bitwidth 4 -sequential_cell latch \
 analyze -format sverilog -vcs "-f ${flistPath}" > ${logDir}/analyze.log
 elaborate ${topModule} > ${logDir}/elaborate.log
 
-kill
-
 link > ${reportDir}/link.rpt
 if {[link] == 0} {
    echo "Linking Error";

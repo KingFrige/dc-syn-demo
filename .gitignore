@@ -3,3 +3,5 @@ build/
 command.log
 .template/
 alib-52/
+**/.nfs000*
+*.cmvd
