@@ -14,7 +14,7 @@ make syn
 more update
 ---------------
 
-- update common config
+- update [common config](scripts/common.tcl)
 
   * flist
   * mem/ip db file
